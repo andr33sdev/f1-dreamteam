@@ -1,4 +1,5 @@
 import { F1Pilot } from "../types";
+import { formatCurrency } from "../helpers";
 
 type IndividualF1PilotProps = {
   addedPilots: F1Pilot[];
@@ -14,7 +15,7 @@ export default function IndividualF1Pilot({
     <>
       <td className="p-3 text-center">{f1Pilot.name}</td>
       <td className="p-3 text-center">{f1Pilot.team}</td>
-      <td className="p-3 text-center">{f1Pilot.price}</td>
+      <td className="p-3 text-center">{formatCurrency(f1Pilot.price)}</td>
       <td className="p-3 text-center">
         <button
           onClick={() => addF1Pilot(f1Pilot)}

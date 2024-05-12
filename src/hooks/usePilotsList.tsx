@@ -26,6 +26,13 @@ export default function usePilotsList() {
     });
   };
 
+  const deletedAlert = (pilot: F1Pilot["name"]) => {
+    toast.error(`${pilot} succesfully deleted`, {
+      autoClose: 1000,
+      transition: Flip,
+    });
+  };
+
   const addF1Pilot = (f1Pilot: F1Pilot) => {
     const pilotExists = addedF1Pilots.find((pilot) => pilot.id === f1Pilot.id);
 
@@ -47,6 +54,7 @@ export default function usePilotsList() {
     );
     setAddedF1Pilots(postDeletedF1Pilots);
     setBudget(budget + f1Pilot.price);
+    deletedAlert(f1Pilot.name);
   };
 
   return {

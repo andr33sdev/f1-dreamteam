@@ -1,4 +1,5 @@
 import { F1Pilot } from "../types";
+import { formatCurrency } from "../helpers";
 
 type AddedF1PilotProps = {
   f1Pilot: F1Pilot;
@@ -17,7 +18,7 @@ export default function AddedF1Pilot({
       <div>
         <p className="font-black">{f1Pilot.name}</p>
         <p>{f1Pilot.team}</p>
-        <p>{`Price: ${f1Pilot.price}`}</p>
+        <p>{`Price: ${formatCurrency(f1Pilot.price)}`}</p>
       </div>
 
       <button
