@@ -11,18 +11,34 @@ export default function IndividualF1Pilot({
   addF1Pilot,
   f1Pilot,
 }: IndividualF1PilotProps) {
+  const isMobile = window.innerWidth <= 768;
   return (
     <>
-      <td className="p-3 text-center">{f1Pilot.name}</td>
-      <td className="p-3 text-center">{f1Pilot.team}</td>
-      <td className="p-3 text-center">{formatCurrency(f1Pilot.price)}</td>
-      <td className="p-3 text-center">
-        <button
-          onClick={() => addF1Pilot(f1Pilot)}
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded-full"
-        >
-          ADD TO MY TEAM!
-        </button>
+      <td className="p-2 sm:p-3 text-center">
+        <p className="font-black text-lg sm:text-base">{f1Pilot.name}</p>
+      </td>
+      <td className="p-2 sm:p-3 text-center">
+        <p className="text-sm">{f1Pilot.team}</p>
+      </td>
+      <td className="p-2 sm:p-3 text-center">
+        <p className="text-sm">{formatCurrency(f1Pilot.price)}</p>
+      </td>
+      <td className="p-2 sm:p-3 text-center">
+        {isMobile ? (
+          <button
+            onClick={() => addF1Pilot(f1Pilot)}
+            className="bg-green-500 hover:bg-green-700 text-white font-bold lg:py-1 lg:px-2 p-2 rounded-full"
+          >
+            ADD
+          </button>
+        ) : (
+          <button
+            onClick={() => addF1Pilot(f1Pilot)}
+            className="bg-green-500 hover:bg-green-700 text-white font-bold lg:py-1 lg:px-2 sm:px-3 rounded-full"
+          >
+            ADD TO MY TEAM!
+          </button>
+        )}
       </td>
     </>
   );

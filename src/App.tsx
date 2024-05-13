@@ -4,19 +4,18 @@ import MyF1Team from "./components/MyF1Team";
 import usePilotsList from "./hooks/usePilotsList";
 
 function App() {
-  const { budget, addF1Pilot, addedF1Pilots, deleteF1Pilot } =
-    usePilotsList();
+  const { budget, addF1Pilot, addedF1Pilots, deleteF1Pilot } = usePilotsList();
 
   return (
-    <div className="grid grid-cols-2 gap-32 bg-slate-950">
-      <div className="ml-10 max-w-fit">
+    <div className="lg:grid lg:grid-cols-2 lg:gap-32 sm:flex sm:flex-col sm:w-full sm:m-0 sm:p-0 bg-slate-950">
+      <div className="lg:ml-10 lg:mt-5 sm:w-full sm:shrink-0 sm:m-0 sm:p-0">
         <PilotsList
           f1Pilots={f1Pilots}
           addF1Pilot={addF1Pilot}
           addedF1Pilots={addedF1Pilots}
         />
       </div>
-      <div className=" mr-10">
+      <div className="lg:mr-10 sm:mx-5 sm:mb-5 sm:p-0">
         <MyF1Team
           budget={budget}
           addedF1Pilots={addedF1Pilots}

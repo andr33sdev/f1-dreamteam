@@ -13,14 +13,13 @@ export default function AddedF1Pilot({
   return (
     <div
       key={f1Pilot.id}
-      className="flex items-center justify-around p-4 bg-slate-700 text-white rounded-xl"
+      className="flex flex-col sm:flex-row items-center justify-between p-3 sm:p-4 bg-slate-700 text-white rounded-xl"
     >
-      <div>
-        <p className="font-black">{f1Pilot.name}</p>
-        <p>{f1Pilot.team}</p>
-        <p>{`Price: ${formatCurrency(f1Pilot.price)}`}</p>
+      <div className="mb-2 sm:mb-0">
+        <p className="font-black text-lg">{f1Pilot.name}</p>
+        <p className="text-sm">{f1Pilot.team}</p>
+        <p className="text-sm">{`Price: ${formatCurrency(f1Pilot.price)}`}</p>
       </div>
-
       <button
         onClick={() => deleteF1Pilot(f1Pilot)}
         className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded-full"
